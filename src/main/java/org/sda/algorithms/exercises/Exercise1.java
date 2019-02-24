@@ -3,6 +3,8 @@ package org.sda.algorithms.exercises;
 
 import org.sda.algorithms.util.CalcTime;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -19,12 +21,13 @@ public class Exercise1 {
 
     public static void main(String[] args) {
 
+        List<String> names = new ArrayList<>();
         try {
 
-            /**
-             * TODO
-             * Tutaj umieść kod odpowiedzialny za pobieranie imion
-             */
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Podaj imię:");
+                names.add(scanner.next());
+            }
         }
         finally {
             scanner.close();
@@ -32,10 +35,18 @@ public class Exercise1 {
 
         CALC_TIME.start();
 
-        /**
-         * TODO
-         * Tutaj umieść kod odpowiedzialny za wyświetlenie imion
-         */
+        for (String name : names){
+            System.out.println(name);
+        }
+
+        for (String name : names){
+            if(name.charAt(0) == 'A' || name.charAt(0) == 'a'){
+                for (int i = name.length()-1; i >= 0; i--) {
+                    System.out.print(name.charAt(i));
+                }
+                System.out.println();
+            }
+        }
 
         CALC_TIME.stop();
         CALC_TIME.display();
