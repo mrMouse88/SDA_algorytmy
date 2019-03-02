@@ -33,7 +33,6 @@ public class Exercise4 {
         System.out.println("podaj ile liczb");
         int ile = scanner.nextInt();
         int[] intArray = new int[ile];
-        int suma = 0;
 
         System.out.println("podaj liczby oddzielając je enterem:");
         for (int i = 0; i < ile; i++) {
@@ -41,6 +40,7 @@ public class Exercise4 {
         }
 
         CALC_TIME.start();
+        int suma = 0;
         for (int x : intArray) {
             System.out.println(suma += x);
         }
