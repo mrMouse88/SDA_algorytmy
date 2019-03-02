@@ -30,10 +30,23 @@ public class Exercise4 {
         // TODO
         // Pobierze od uzytkownika informacje ile przykladow chce sprawdzic
         // Pobierz liczby
+        System.out.println("podaj ile liczb");
+        int ile = scanner.nextInt();
+        scanner.nextLine();
+        int[] intArray = new int[ile];
+        int suma = 0;
+
+        System.out.println("podaj liczby oddzielając je enterem:");
+        for (int i = 0; i < ile; i++) {
+            intArray[i] = scanner.nextInt();
+            scanner.nextLine();
+        }
 
         CALC_TIME.start();
-
-        // Rozwiazanie
+        for (int x : intArray) {
+            suma += x;
+            System.out.println(suma);
+        }
 
         CALC_TIME.stop();
         CALC_TIME.display();

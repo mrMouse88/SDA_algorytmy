@@ -31,7 +31,7 @@ public class Exercise3 {
         scanner.nextLine();
 
         for (int i = 0; i < x; i++) {
-            System.out.println("Podaj liczbę "+(i+1));
+            System.out.println("Podaj liczbę " + (i + 1));
             intArray[i] = scanner.nextInt();
             scanner.nextLine();
         }
@@ -40,10 +40,10 @@ public class Exercise3 {
 
         // TODO
         // Sprawdz czy liczba jest pierwsza uzywajac metody isPrime
-        for (int i : intArray){
-            if(isPrime(i)==true){
+        for (int i : intArray) {
+            if (isPrime(i)) {
                 System.out.println("TAK");
-            }else{
+            } else {
                 System.out.println("NIE");
             }
         }
@@ -56,15 +56,13 @@ public class Exercise3 {
     // zaimplementuj metode ktora zwroci true dla kazdej liczby pierwszej
     // i false dla innych
     public static boolean isPrime(int number) {
-        for (int i = 0; i < number; i++) {
-            if(number%(i+2)==0){
-                if(number==i+2){
-                    return true;
-                }else {
+//        if(number%2 !=0){
+            for (int i = 2; i < number / 2; i++) {
+                if (number % i == 0) {
                     return false;
                 }
             }
-        }
-        return false;
+//        }
+        return true;
     }
 }
