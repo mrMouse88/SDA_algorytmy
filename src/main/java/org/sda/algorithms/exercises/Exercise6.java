@@ -3,6 +3,8 @@ package org.sda.algorithms.exercises;
 
 import org.sda.algorithms.util.CalcTime;
 
+import java.util.Scanner;
+
 /**
  * @author marek.sobieraj
  * <p>
@@ -19,15 +21,35 @@ public class Exercise6 {
     private static CalcTime CALC_TIME = new CalcTime();
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("ile prob:");
+        int ile = input.nextInt();
 
+        int[] lata = new int[ile];
+
+        System.out.println("podaj roczniki:");
+        for (int i = 0; i < ile; i++) {
+            lata[i] = input.nextInt();
+        }
 
         CALC_TIME.start();
+
+        for (int rok : lata){
+            if(isLeapYear(rok)){
+                System.out.println("TAK");
+            }else{
+                System.out.println("NIE");
+            }
+        }
 
         CALC_TIME.stop();
         CALC_TIME.display();
     }
 
-    private static boolean isLeapYear(int year) {
+    public static boolean isLeapYear(int year) {
+        if((year%4==0 && year%100!=0) || year%400==0){
+            return true;
+        }
         return false;
     }
 }
