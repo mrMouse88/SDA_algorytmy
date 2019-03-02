@@ -16,12 +16,14 @@ public class Main {
                     System.out.println("You have: " + user.getBalance());
                     break;
                 case 2:
-                    System.out.println("input nominal:");
                     boolean innerStatus = false;
                     BigDecimal nominal = BigDecimal.valueOf(0.0);
                     while (!innerStatus){
+                        System.out.println("input nominal:");
                         nominal = BigDecimal.valueOf(input.nextDouble());
-//                        if()
+                        if(user.isNominal(nominal)){
+                            innerStatus = true;
+                        }
                     }
                     System.out.println("input quantity:");
                     int quantity = input.nextInt();

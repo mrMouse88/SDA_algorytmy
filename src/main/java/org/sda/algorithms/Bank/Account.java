@@ -48,7 +48,7 @@ public class Account {
         }
     }
 
-    public static boolean isNominal(BigDecimal amount){
+    public boolean isNominal(BigDecimal amount){
         for (BigDecimal nominal:NOMINALS){
             if (amount.compareTo(nominal) == 0){
                 return true;
