@@ -79,13 +79,14 @@ public class Reminder {
      */
     public static void printUsingFor(List<String> list) {
         for(int i=0; i < list.size(); i++){
-
+            String s = list.get(i);
+            System.out.println(s);
         }
     }
 
-    public static void printUsingForEach(Set<String> set) {
+    public static void printUsingForEach(Collection<String> set) {
         for(String s: set){
-
+            System.out.println(s);
         }
     }
 
@@ -94,8 +95,11 @@ public class Reminder {
      * Skorzystaj z pętli while
      */
     public static void printUsingIterator(Collection<String> fruitsCollection){
-        Iterator fruitIterator = fruitsCollection.iterator();
-
+        Iterator<String> fruitIterator = fruitsCollection.iterator();
+        while (fruitIterator.hasNext()){
+            String s = fruitIterator.next();
+            System.out.println(s);
+        }
 
     }
 

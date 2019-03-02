@@ -1,5 +1,6 @@
 package org.sda.algorithms.exercices;
 
+import org.assertj.core.internal.bytebuddy.build.ToStringPlugin;
 import org.junit.jupiter.api.Test;
 import org.sda.algorithms.exercises.Stack;
 
@@ -100,5 +101,35 @@ public class StackTest {
         // Porównując czy metoda isFull() zwraca true
         assertThat(stack.isFull()).isEqualTo(true);
 
+    }
+
+    @Test
+    public void testPeek(){
+
+        Stack stack = new Stack();
+
+        String string = "SDA";
+        stack.push(string);
+
+        Object result = stack.peek();
+
+        assertThat(result).isEqualTo(string);
+        assertThat(stack.size()).isEqualTo(1);
+    }
+
+    @Test
+    public void getMoreThanIsOnStack(){
+        Stack stack = new Stack();
+
+        String string = "SDA";
+        stack.push(string);
+
+        Object result1 = stack.pop();
+        Object result2 = stack.pop();
+
+        assertThat(result1).isEqualTo(string);
+        assertThat(result2).isEqualTo(null);
+
+        assertThat(stack.size()).isEqualTo(0);
     }
 }

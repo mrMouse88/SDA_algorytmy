@@ -21,6 +21,24 @@ import java.math.BigDecimal;
 public class Exercise5 {
     private static CalcTime CALC_TIME = new CalcTime();
 
+    private static final BigDecimal[] NOMINALS = {
+            BigDecimal.valueOf(500.0),
+            BigDecimal.valueOf(200.0),
+            BigDecimal.valueOf(100.0),
+            BigDecimal.valueOf(50.0),
+            BigDecimal.valueOf(20.0),
+            BigDecimal.valueOf(10.0),
+            BigDecimal.valueOf(5.0),
+            BigDecimal.valueOf(2.0),
+            BigDecimal.valueOf(1.0),
+            BigDecimal.valueOf(0.50),
+            BigDecimal.valueOf(0.20),
+            BigDecimal.valueOf(0.10),
+            BigDecimal.valueOf(0.05),
+            BigDecimal.valueOf(0.02),
+            BigDecimal.valueOf(0.01)
+    };
+
     public static void main(String[] args) {
 
         // TODO
