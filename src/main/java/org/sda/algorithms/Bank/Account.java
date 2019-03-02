@@ -1,5 +1,7 @@
 package org.sda.algorithms.Bank;
 
+import javafx.beans.binding.StringBinding;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
@@ -44,6 +46,15 @@ public class Account {
         }else{
             System.out.println("your too poor!");
         }
+    }
+
+    public static boolean isNominal(BigDecimal amount){
+        for (BigDecimal nominal:NOMINALS){
+            if (amount.compareTo(nominal) == 0){
+                return true;
+            }
+        }
+        return false;
     }
 
     private static String value(BigDecimal value) {

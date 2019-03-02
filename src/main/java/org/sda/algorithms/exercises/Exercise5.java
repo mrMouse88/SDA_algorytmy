@@ -4,6 +4,10 @@ package org.sda.algorithms.exercises;
 import org.sda.algorithms.util.CalcTime;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author marek.sobieraj
@@ -41,13 +45,27 @@ public class Exercise5 {
 
     public static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
+
         // TODO
         // Pobierze od uzytkownika informacje ile przykladow chce sprawdzic
         // Pobierz liczby
 
+        System.out.println("ile przypadków:");
+        int ilePrzypadkow = input.nextInt();
+        List<BigDecimal> przypadki = new ArrayList<>();
+
+        for (int i = 0; i < ilePrzypadkow; i++) {
+            przypadki.add(BigDecimal.valueOf(input.nextDouble()));
+            input.nextLine();
+        }
+
         CALC_TIME.start();
 
         // Rozwiazanie
+        for (BigDecimal przypadek : przypadki) {
+            System.out.println(value(przypadek));
+        }
 
         CALC_TIME.stop();
         CALC_TIME.display();
@@ -67,6 +85,22 @@ public class Exercise5 {
      * 1x 0.01
      */
     private static String value(BigDecimal value) {
-        return "";
+        String ret = "Kwota " + value + "\n";
+//        for (BigDecimal nominal : NOMINALS) {
+//            if (value.compareTo(nominal) == 1) {
+//                BigDecimal a = value.divide(nominal, 0, RoundingMode.FLOOR);
+//                value = value.subtract(nominal.multiply(a));
+//                ret += "" + a + " x " + nominal + "\n";
+//            } else if (value.compareTo(nominal) == 0) {
+//                value = value.subtract(nominal);
+//                ret += "" + 1 + " x " + nominal + "\n";
+//            }
+//        }
+        for (BigDecimal nominal : NOMINALS) {
+                BigDecimal a = value.divide(nominal, 0, RoundingMode.FLOOR);
+                value = value.subtract(nominal.multiply(a));
+                ret += "" + a + " x " + nominal + "\n";
+        }
+        return ret;
     }
 }

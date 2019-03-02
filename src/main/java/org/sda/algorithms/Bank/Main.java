@@ -11,18 +11,20 @@ public class Main {
         while (status) {
             printMenu();
             int menuPos = input.nextInt();
-            input.nextLine();
             switch (menuPos) {
                 case 1:
                     System.out.println("You have: " + user.getBalance());
                     break;
                 case 2:
                     System.out.println("input nominal:");
-                    BigDecimal nominal = BigDecimal.valueOf(input.nextDouble());
-                    input.nextLine();
+                    boolean innerStatus = false;
+                    BigDecimal nominal = BigDecimal.valueOf(0.0);
+                    while (!innerStatus){
+                        nominal = BigDecimal.valueOf(input.nextDouble());
+//                        if()
+                    }
                     System.out.println("input quantity:");
                     int quantity = input.nextInt();
-                    input.nextLine();
                     user.addAmount(nominal, quantity);
                     break;
                 case 3:
