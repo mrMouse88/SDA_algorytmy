@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BubbleSort {
 
-    private static int[] bubbleSort(int[] intArray) {
+    public static int[] bubbleSort(int[] intArray) {
         for (int i = 0; i < intArray.length-1; i++) {
             for (int j = 0; j < intArray.length - 1 - i; j++) {
                 if (intArray[j] > intArray[j + 1]) {
