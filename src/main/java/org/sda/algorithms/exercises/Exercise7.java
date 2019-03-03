@@ -28,18 +28,28 @@ public class Exercise7 {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Podaj liczby (oddzielone przecinkiem): ");
             String[] numbers = scanner.nextLine().split(",");
+            values = new int[numbers.length];
+            for (int i = 0; i < numbers.length; i++) {
+                values[i] = Integer.valueOf(numbers[i]);
+            }
+            System.out.println("Podaj szukaną liczbę");
+            search = scanner.nextInt();
+
 
         }
-
         CALC_TIME.start();
-
-
+        int result = findPosition(values, search);
         CALC_TIME.stop();
         CALC_TIME.display();
-
+        System.out.println(result);
     }
 
     private static int findPosition(int[] values, int search) {
-        return 0;
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] == search) {
+                return i + 1;
+            }
+        }
+        return -1;
     }
 }

@@ -35,6 +35,9 @@ public class Exercise9 {
             for (int i = 0; i < value; i++) {
                 numbers.add(scanner.nextInt());
             }
+            for (int number : numbers) {
+                System.out.println(silnia(number));
+            }
         }
 
         CALC_TIME.start();
@@ -45,6 +48,10 @@ public class Exercise9 {
     }
 
     private static long silnia(int value) {
-        return 0;
+        if (value == 0) {
+            return 1;
+        } else {
+            return value * silnia(value - 1);
+        }
     }
 }

@@ -34,7 +34,7 @@ public class Exercise8 {
 
         CALC_TIME.start();
 
-        String encoded = cesarCrypt.encodeCesar(text, CESAR_STEP);
+        String encoded = cesarCrypt.decodeCesar(text, CESAR_STEP);
         System.out.println(encoded);
 
         CALC_TIME.stop();
