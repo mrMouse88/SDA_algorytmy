@@ -8,8 +8,8 @@ import static org.sda.algorithms.exercises.BubbleSort.bubbleSort;
 public class BubbleSortTest {
     @Test
     public void BubbleSort(){
-        int[] intArrayNotSorted = {7,3,5};
-        int[] intArraySorted = {3,5,7};
+        int[] intArrayNotSorted = {7,235,5,1};
+        int[] intArraySorted = {1,5,7,235};
 
         assertThat(bubbleSort(intArrayNotSorted)).isEqualTo(intArraySorted);
     }
