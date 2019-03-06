@@ -28,7 +28,7 @@ public class House {
         return price;
     }
 
-    protected House generateRandomHome(){
+    protected House generateRandomHouse(){
         Random r = new Random();
         double randomPrice = MIN_PRICE + (MAX_PRICE - MIN_PRICE) * r.nextDouble();
         int randomSize = MIN_SIZE + r.nextInt((MAX_SIZE - MIN_SIZE) + 1);

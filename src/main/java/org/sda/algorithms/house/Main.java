@@ -9,7 +9,7 @@ public class Main {
 
         for (int i = 0; i < 10; i++) {
             House h = new House();
-            h = h.generateRandomHome();
+            h = h.generateRandomHouse();
             listOfHouse.add(h);
         }
 
