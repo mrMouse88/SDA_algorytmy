@@ -13,8 +13,8 @@ public class House {
     final int MAX_ROOM = 10;
 
     BigDecimal price;
-    int size;
-    int rooms;
+    Integer size;
+    Integer rooms;
 
     public House(){}
 
@@ -26,6 +26,14 @@ public class House {
 
     public BigDecimal getPrice() {
         return price;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public Integer getRooms() {
+        return rooms;
     }
 
     protected House generateRandomHouse(){
